@@ -15,12 +15,14 @@ public class flipcoin{
            double random=0.0;
            for(double i=1;i<=num;i++)
              { 
-               random=Math.random(); 
+               random=Math.random();
+               System.out.println("the random number generated"+random); 
                if(random<0.5)
                   tail++;
                else
                   head ++;
              }
+           
            System.out.println("the probability of getting head ="+(head/num)*100+"%");
                     System.out.println("the probability of getting tail="+(tail/num)*100+"%");
 }
