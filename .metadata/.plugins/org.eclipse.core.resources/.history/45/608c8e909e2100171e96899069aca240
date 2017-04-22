@@ -1,0 +1,18 @@
+package dataStructure;
+
+import com.bridgelabz.utility.Utility;
+
+public class Balanced {
+	public static void main(String[] args)
+    {
+		Utility u1=new Utility();
+       String str="{{()}";
+       boolean balanced_paranthesis=u1.isBalanced(str);
+       if(balanced_paranthesis)
+        System.out.println("yes");
+         else
+        System.out.println("no");
+    }
+
+}
+           

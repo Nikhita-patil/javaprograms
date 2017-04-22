@@ -1,0 +1,70 @@
+package com.bridgelabz.address_book.SaveModel;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+
+import com.bridgelabz.address_book.model.Person;
+
+public class AddressImplements implements AddressInterface {
+ //Person person_details=null;
+	ArrayList arr_list=null;
+	HashMap<String, ArrayList<Person>> hashmap = new HashMap<String, ArrayList<Person>>();
+	
+	public void addPerson() {
+		Person person_details = new Person();
+        
+		//arr_list = new ArrayList();
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter the addressBook name you want to create");
+		String addressName = scan.next();
+		System.out.println("enter the person's first name");
+		String personfirstName = scan.next();
+		person_details.setFirstName(personfirstName);
+
+		System.out.println("enter the person's last name");
+		String personlastName = scan.next();
+		person_details.setLastName(personlastName);
+
+		System.out.println("enter the person's address");
+		String personaddress = scan.next();
+		person_details.setAddress(personaddress);
+
+		System.out.println("enter the person's city");
+		String personCity = scan.next();
+		person_details.setCity(personCity);
+
+		System.out.println("enter the person's Zipcode");
+		int personZipcode = scan.nextInt();
+		person_details.setZipcode(personZipcode);
+		
+		System.out.println("enter the person's phone number");
+		long personphoneNumber = scan.nextLong();
+		person_details.setPhone_num(personphoneNumber);
+        
+	/*	arr_list.add(person_details);
+		hashmap.put(addressName, arr_list);*/
+		
+		if()
+		
+		System.out.println(hashmap);
+		
+	}
+
+	public void sortByName() {
+	
+
+	}
+
+	
+	public void sortByZip() {
+		
+
+	}
+
+	public void removePerson() {
+	
+
+	}
+
+}

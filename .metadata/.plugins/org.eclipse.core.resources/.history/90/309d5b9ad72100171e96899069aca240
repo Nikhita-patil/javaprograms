@@ -1,0 +1,43 @@
+package dataStructure;
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.*;
+public class RegexOutput {
+    public static void main(String[] args) {
+		Scanner scanner=new Scanner(System.in);
+		String string="Hello <<name>>, We have your full name as <<fullname>> in our system. your contact number is 91-xxxxxxxxxx. Please,let us know in case of any clarification Thank you BridgeLabz 01/01/2016";
+		String name="<<name>>";
+		String fullname="<<fullname>>";
+		String phone_number="xxxxxxxxxx";
+		String date="01/01/2016";
+		  Pattern pattern;
+		  Matcher matcher;
+		  System.out.println("enter the name");
+		  String name1=scanner.next();
+		  System.out.println("enter the full name");
+		  String fullname1=scanner.next();
+		  System.out.println("enter the phone num");
+		  String phonenum=scanner.next();
+		  System.out.println("enter the date");
+		  String date1=scanner.next();
+		   
+		  pattern=Pattern.compile(name);
+		  m=pattern.matcher(string);
+		  string=m.replaceAll(name1);
+		  
+		  pattern=Pattern.compile(fullname);
+		  m=pattern.matcher(string);
+		  string=m.replaceAll(fullname1);
+		  
+		  p=Pattern.compile(phone_number);
+		  m=p.matcher(string);
+		  string=m.replaceAll(phone_number);
+		  p=Pattern.compile(date);
+		  m=p.matcher(string);
+		  string=m.replaceAll(date);
+		  
+		  System.out.println(string);
+}
+}

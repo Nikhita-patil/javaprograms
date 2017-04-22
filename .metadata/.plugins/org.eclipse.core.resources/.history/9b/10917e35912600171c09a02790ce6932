@@ -1,0 +1,333 @@
+package com.bridgelabz.address_book.Service;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+import com.bridgelabz.address_book.model.Person;
+import com.bridgelabz.address_book.model.SortByName;
+import com.bridgelabz.address_book.model.SortByZipCode;
+
+public class AddressImplements implements AddressInterface {
+	// Person person_details=null;
+	Scanner scan = new Scanner(System.in);
+	ArrayList arr_list = null;
+	Person person_details = null;
+	SortByName sortname = null;
+	SortByZipCode sortzipcode = null;
+
+	static HashMap<String, ArrayList<Person>> hashmap = new HashMap<String, ArrayList<Person>>();
+
+	public void addPerson() {
+		person_details = new Person();
+		// arr_list = new ArrayList();
+		fileReader();
+
+		System.out.println("enter the addressBook name you want to create");
+		String addressName = scan.next();
+		System.out.println("enter the person's first name");
+		String personfirstName = scan.next();
+		person_details.setFirstName(personfirstName);
+
+		System.out.println("enter the person's last name");
+		String personlastName = scan.next();
+		person_details.setLastName(personlastName);
+
+		System.out.println("enter the person's address");
+		String personaddress = scan.next();
+		person_details.setAddress(personaddress);
+
+		System.out.println("enter the person's city");
+		String personCity = scan.next();
+		person_details.setCity(personCity);
+
+		System.out.println("enter the person's state");
+		String personState = scan.next();
+		person_details.setState(personState);
+
+		System.out.println("enter the person's Zipcode");
+		int personZipcode = scan.nextInt();
+		int length1=Integer.toString(personZipcode).l
+		
+		if(personZipcode==6)
+		{
+		person_details.setZipcode(personZipcode);
+		}
+		else
+		{
+			System.out.println("enter the zipcode having length of 6 digit");
+			int personZipcode1 = scan.nextInt();
+		}
+		System.out.println("enter the person's phone number");
+		long personphoneNumber = scan.nextLong();
+		if(personphoneNumber==10)
+		{
+		person_details.setPhone_num(personphoneNumber);
+		}
+		else
+		{
+			System.out.println("enter 10 digit phone number");
+			long personphoneNumber1 = scan.nextLong();
+		}
+		/*
+		 * arr_list.add(person_details); hashmap.put(addressName, arr_list);
+		 */
+
+		if (hashmap.get(addressName) == null)
+			hashmap.put(addressName, new ArrayList<Person>());
+
+		hashmap.get(addressName).add(person_details);
+
+		System.out.println(hashmap);
+		fileWriter();
+       // fileReader();
+	}
+
+	public void sortByName() {
+		sortname = new SortByName();
+		fileReader();
+		System.out.println("enter the addressname you want to sort");
+		String addressname = scan.next();
+
+		ArrayList arrlist_new = new ArrayList();
+		arrlist_new = hashmap.get(addressname);
+		Collections.sort(arrlist_new, sortname);
+		System.out.println(hashmap);
+	}
+
+	public void sortByZipCode() {
+		sortzipcode = new SortByZipCode();
+		fileReader();
+		System.out.println("enter the addressbook name you want to sort by zipcode");
+		String addressbookname = scan.next();
+		ArrayList<Person> arrlist_new = hashmap.get(addressbookname);
+		Collections.sort(arrlist_new, sortzipcode);
+		System.out.println(hashmap);
+	}
+
+	public void removePerson_addressBook() {
+		System.out.println("enter the address_book you want to delete from a hashmap");
+		String deleteName = scan.next();
+         fileReader();
+		if (hashmap.containsKey(deleteName)) {
+			hashmap.remove(deleteName);
+			System.out.println(hashmap);
+		}
+		fileWriter();
+		
+
+	}
+
+	public void updatePerson_addressBook() {
+		System.out.println("enter the address_book_Name you want to update");
+		String updateName = scan.next();
+         fileReader();
+		if (hashmap.containsKey(updateName)) {
+			System.out.println("Do u want to update the corresponding adress_book");
+			System.out.println("enter yes or no");
+			String choice = scan.next();
+			if (choice.equalsIgnoreCase("yes")) {
+				System.out.println("enter the changed addressname ");
+				String addressName = scan.next();
+				ArrayList arr_list1 = new ArrayList<>();
+				arr_list1 = hashmap.get(updateName);
+				hashmap.remove(updateName);
+				hashmap.put(addressName, arr_list1);
+			} else if (choice.equalsIgnoreCase("no")) {
+				System.out.println("I guess u don't want to make changes");
+			}
+
+			else {
+				System.out.println("please enter appropriate value");
+
+			}
+
+		}
+		System.out.println(hashmap);
+		fileWriter();
+	}
+
+	public void removeParticularContact() {
+		System.out.println("enter the contact you want to delete");
+		String deleteName = scan.next();
+		fileReader();
+		ArrayList arr_list = new ArrayList<>();
+		Iterator<Entry<String, ArrayList<Person>>> it = hashmap.entrySet().iterator();
+		while (it.hasNext()) {
+			Entry<String, ArrayList<Person>> entry = it.next();
+			Iterator<Person> listIt = entry.getValue().iterator();
+			while (listIt.hasNext()) {
+				Person value = listIt.next();
+				if ((value.getFirstName()).equalsIgnoreCase(deleteName)) {
+					listIt.remove();
+					break;
+				}
+
+			}
+
+			if (entry.getValue().isEmpty()) {
+				it.remove();
+			}
+		}
+		System.out.println(hashmap);
+      fileWriter();
+	}
+
+	public void updateParticularContact() {
+		System.out.println("enter the contact you want to update");
+		String updateName = scan.next();
+	 fileReader();
+		Iterator<Entry<String, ArrayList<Person>>> it = hashmap.entrySet().iterator();
+		while (it.hasNext()) {
+			Entry<String, ArrayList<Person>> entry = it.next();
+			Iterator<Person> listIt = entry.getValue().iterator();
+			while (listIt.hasNext()) {
+				Person value = listIt.next();
+				if ((value.getFirstName()).equalsIgnoreCase(updateName)) {
+					System.out.println("enter the person's first name");
+					String personfirstName = scan.next();
+					value.setFirstName(personfirstName);
+
+					System.out.println("enter the person's last name");
+					String personlastName = scan.next();
+					value.setLastName(personlastName);
+
+					System.out.println("enter the person's address");
+					String personaddress = scan.next();
+					value.setAddress(personaddress);
+
+					System.out.println("enter the person's city");
+					String personCity = scan.next();
+					value.setCity(personCity);
+					System.out.println("enter the person's Zipcode");
+					int personZipcode = scan.nextInt();
+					value.setZipcode(personZipcode);
+
+					System.out.println("enter the person's phone number");
+					long personphoneNumber = scan.nextLong();
+					value.setPhone_num(personphoneNumber);
+					break;
+				}
+
+			}
+		
+		}
+	
+		System.out.println(hashmap);
+		fileWriter();
+		fileReader();
+	}
+
+	public void display() {
+		System.out.println("enter the address_book u want to display");
+		String Adress_bookName = scan.next();
+		ArrayList<Person> arr_list = new ArrayList<>();
+		fileReader();
+
+		arr_list = hashmap.get(Adress_bookName);
+		if(arr_list!=null)
+		{
+		System.out.println("|-------------------------------------------------------------|");
+		System.out.println("|                    " + Adress_bookName + "                   ");
+		System.out.println("|-------------------------------------------------------------|");
+		for (int i = 0; i < arr_list.size(); i++) {
+			Person p1 = arr_list.get(i);
+			System.out.println("|First Name       |          " + p1.getFirstName() + "        ");
+			System.out.println("|-------------------------------------------------------------");
+			System.out.println("|last Name        |         " + p1.getLastName() + "          ");
+			System.out.println("|-------------------------------------------------------------");
+			System.out.println("|  address        |          " + p1.getAddress() + "          ");
+			System.out.println("|-------------------------------------------------------------");
+			System.out.println("|city Name        |          " + p1.getCity() + "             ");
+			System.out.println("|-------------------------------------------------------------");
+			System.out.println("|state Name       |          " + p1.getState() + "            ");
+			System.out.println("|-------------------------------------------------------------");
+			System.out.println("| Zipcode         |          " + p1.getZipcode() + "          ");
+			System.out.println("|-------------------------------------------------------------");
+			System.out.println("|Phone.num        |         " + p1.getPhone_num() + "         ");
+			System.out.println("|-------------------------------------------------------------");
+		}
+		
+			
+		}
+		else
+		{
+			System.out.println("the particular account is not present");
+		}
+
+	}
+
+	public void searchContact() {
+		System.out.println("enter the persons Firstname you want to search");
+		String search_firstname = scan.next();
+		System.out.println("enter the persons lastname you want to search");
+		String search_lastnamename = scan.next();
+		fileReader();
+		Iterator<Entry<String, ArrayList<Person>>> it = hashmap.entrySet().iterator();
+		while (it.hasNext()) {
+			Entry<String, ArrayList<Person>> entry = it.next();
+			Iterator<Person> listIt = entry.getValue().iterator();
+			while (listIt.hasNext()) {
+				Person value = listIt.next();
+				if (((value.getFirstName()).equalsIgnoreCase(search_firstname))
+						&& ((value.getLastName()).equalsIgnoreCase(search_lastnamename))) {
+					System.out.println("|First Name       |          " + value.getFirstName() + "     ");
+					System.out.println("|-------------------------------------------------------------");
+					System.out.println("|last Name        |         " + value.getLastName() + "       ");
+					System.out.println("|------------------------------------------------------------ ");
+					System.out.println("|  address        |          " + value.getAddress() + "       ");
+					System.out.println("|-------------------------------------------------------------");
+					System.out.println("|city Name        |          " + value.getCity() + "          ");
+					System.out.println("|-------------------------------------------------------------");
+					System.out.println("|state Name       |          " + value.getState() + "         ");
+					System.out.println("|-------------------------------------------------------------");
+					System.out.println("| Zipcode         |          " + value.getZipcode() + "       ");
+					System.out.println("|-------------------------------------------------------------");
+					System.out.println("|Phone.num        |         " + value.getPhone_num() + "      ");
+					System.out.println("|-------------------------------------------------------------");
+
+				}
+
+			}
+
+		}
+
+	}
+
+	public static void fileWriter()
+
+	{
+		try {
+			FileOutputStream fos = new FileOutputStream("/home/bridgeit/workspace/Address_Book/src/Person.ser");
+			ObjectOutputStream outputStream = new ObjectOutputStream(fos);
+			outputStream.writeObject(hashmap);
+			outputStream.close();
+			outputStream.flush();
+		} catch (IOException ex) {
+			System.err.println(ex);
+		}
+	}
+
+	public static void fileReader() {
+		
+
+		try {
+			FileInputStream fis = new FileInputStream("/home/bridgeit/workspace/Address_Book/src/Person.ser");
+			ObjectInputStream inputStream = new ObjectInputStream(fis);
+			hashmap =(HashMap) inputStream.readObject();
+			inputStream.close();
+		} catch (IOException | ClassNotFoundException ex) {
+			System.err.println(ex);
+		}
+
+	
+	}
+}

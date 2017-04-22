@@ -1,0 +1,17 @@
+package com.bridgelabz.colletion_prgms;
+
+public class Product {
+
+	String product_name;
+	int id;
+	double cost;
+	
+	public Product(String product_name, int id, double cost) {
+		super();
+		this.product_name = product_name;
+		this.id = id;
+		this.cost = cost;
+	}
+	
+	
+}

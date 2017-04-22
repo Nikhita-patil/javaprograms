@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/home/bridgeit/workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3405232415.index
+1853037643.index
+67367742.index
+4194069690.index
+632735936.index
+788981183.index

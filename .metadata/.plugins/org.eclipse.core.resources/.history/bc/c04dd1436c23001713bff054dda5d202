@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Frog_jump {
+	static int intial=0;
+public static void main(String[] args) {
+	Scanner scanner=new Scanner(System.in);
+	System.out.println("enter the number of walls you want the frog to jump");
+	int no_of_walls=scanner.nextInt();
+    int[] walllength=new int[no_of_walls];
+	System.out.println("enter the length of the walls");
+	for(int i=0;i<walllength.length;i++)
+	{
+		walllength[i]=scanner.nextInt();
+	}
+   System.out.println("enter the frog jumps");
+	int frog_jump=scanner.nextInt();
+	int Step=frogProblem(intial,walllength,frog_jump);
+	System.out.println("the number of steps frog takes to cross the wall is"+Step+"steps");
+}
+static int frogProblem(int intial,int[] walllength,int frog_jump)
+{  
+	
+	
+int count=0;
+int slip=1;
+	while(intial<walllength)
+	{
+	  intial=intial+(frog_jump-slip);
+	  count++;
+}
+	return count;
+}
+}

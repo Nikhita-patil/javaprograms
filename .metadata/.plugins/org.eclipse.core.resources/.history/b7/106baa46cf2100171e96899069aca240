@@ -1,0 +1,26 @@
+package com.bridgelabz.programs;
+
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+public class Quenum
+{   
+	Utility utility =new Utility();
+static int count=0;
+  public static void main(String[] args)
+ {
+    int number=Integer.parseInt(args[0]);
+     int quotient=2;
+   for(int i=1;i<number;i++)
+     
+       quotient=quotient*2;
+
+     
+System.out.println(quotient);
+   utility.search(number-1,0,quotient);
+  
+    }
+   
+    
+}  
+

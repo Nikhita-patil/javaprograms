@@ -1,0 +1,25 @@
+package com.bridgelabz.colletion_prgms;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashcodeOverriding {
+     
+	public static void main(String[] args) {
+		 
+		Set<Product> product=new HashSet<Product>();
+		Product p1=
+		
+		product.add(new Product("wood", 1234, 54.0));
+		product.add(new Product("oxygen", 1234, 54.0));
+		product.add(new Product("fire", 1234, 54.0));
+		product.add(new Product("oxygen", 1234, 54.0));
+		product.add(new Product("paper", 1234, 54.0));
+		System.out.println("size="+product.size());
+		for( Object pro:product)
+		{
+			System.out.println(pro);
+		}
+	}
+	
+}

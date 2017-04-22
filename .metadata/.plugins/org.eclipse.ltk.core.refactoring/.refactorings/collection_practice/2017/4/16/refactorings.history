@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;collection_practice/src/com/bridgelabz/colletion_prgms/EmployeeArraylist.java&apos; to &apos;BookArraylist.java&apos;" description="Rename resource &apos;EmployeeArraylist.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/bridgelabz/colletion_prgms/EmployeeArraylist.java" name="BookArraylist.java" stamp="1492409665197" updateReferences="true"/>
+</session>

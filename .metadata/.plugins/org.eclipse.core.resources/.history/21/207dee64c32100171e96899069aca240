@@ -1,0 +1,65 @@
+package com.bridgelabz.programs;
+
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+
+public class Anagram {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Utility util = new Utility();
+
+		System.out.println("Enter 1st String");
+		String string_one = sc.next();
+
+		System.out.println("Enter 2st String");
+		String string_two= sc.next();
+public boolean isAnagram(String string_one,String string_two)
+{
+	
+       string_one = removeSpace(string_one);
+		string_two = removeSpace(string_two);
+
+		if (string_one.length() != string_two.length()) {
+			System.out.println("Not a anagram Strings differ in charactor length");
+			return false;
+		}
+		else
+		{
+		string_one=lowerCase(string_one);
+		string_two=LowerCase(string_two);
+		}
+		boolean balance=check(string_one,string_two);
+		return balance;
+}
+public boolean check(String string_one,String string_two)
+{
+
+		string_one= sort(string_one);
+		string_two = sort(string_two);
+
+		char[] ch1 = string_one.toCharArray();
+		char[] ch2 = string_two.toCharArray();
+
+		for (int i = 0; i < ch1.length; i++) {
+			if (ch1[i] != ch2[i]) {
+				System.out.println("Strings are not a Anagram");
+				return false;
+			}
+		}
+
+		System.out.println("Strings are Anagram");
+ return true;
+	}
+public String lowerCase(String string)
+{
+	char array[]=string.toCharArray();
+	string="";
+	for(int i=0;i<array.length;i++)
+	{
+		if()
+	}
+	string=string+(char)(array[i]+32);
+	
+}
+}

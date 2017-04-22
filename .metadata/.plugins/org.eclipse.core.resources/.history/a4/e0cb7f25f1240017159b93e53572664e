@@ -1,0 +1,50 @@
+package com.bridgelabz.colletion_prgms;
+
+public class Product {
+
+	String product_name;
+	int id;
+	double cost;
+	
+	public Product(String product_name, int id, double cost) {
+		super();
+		this.product_name = product_name;
+		this.id = id;
+		this.cost = cost;
+	}
+
+	@Override
+	public int hashCode() {
+		return id;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Product)){
+		return false;
+		Product product=(Product)x;
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		if (Double.doubleToLongBits(cost) != Double.doubleToLongBits(other.cost))
+			return false;
+		if (id != other.id)
+			return false;
+		if (product_name == null) {
+			if (other.product_name != null)
+				return false;
+		} else if (!product_name.equals(other.product_name))
+			return false;
+		return true;
+		if(!(obj instanceof Product)){
+		return false;
+	}
+	
+	
+}
+
+}

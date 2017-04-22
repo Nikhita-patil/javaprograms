@@ -1,0 +1,29 @@
+package com.bridgelabz.programs;
+
+import java.util.Scanner;
+
+import javax.print.attribute.standard.NumberOfInterveningJobs;
+
+import com.bridgelabz.utility.Utility;
+public class InsertionSort
+{
+	public static void main(String args[])
+	{
+		Utility utility=new Utility();
+		System.out.println("enter the number of elements ");
+		Scanner scanner=new Scanner(System.in);
+		int number= scanner.nextInt();
+		String[] stringArray=utility.read_array(number);
+		System.out.println("displaying the array before sorting ");
+		utility.display(stringArray);
+		String[] sortArray=utility.insertion(stringArray);
+		
+
+		
+
+		System.out.println("displaying the array after sorting");
+		
+	}
+
+}
+

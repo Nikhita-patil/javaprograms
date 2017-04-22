@@ -1,0 +1,11 @@
+package com.bridgelabz.colletion_prgms;
+
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+
+public class linkedhashsetExample {
+
+	LinkedHashSet<Price> linkedlist=new LinkedHashSet<Price>();
+	Linkedlist.add(new Price(book,20))
+	
+}

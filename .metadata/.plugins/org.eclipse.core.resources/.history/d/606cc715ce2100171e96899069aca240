@@ -1,0 +1,36 @@
+package com.bridgelabz.programs;
+
+import java.util.*;
+
+import com.bridgelabz.utility.Utility;
+
+import java.io.*;
+class PrimeFact
+{
+ public static void main(String[] args)
+ {
+		Utility utility=new Utility();
+     System.out.print("Enter a number : ");
+     Scanner scanner=new Scanner(System.in);
+     int number=scanner.nextInt();
+     int i;
+     System.out.print("\nPrime Factors of "+number+" : ");
+     for(i=2;i<=number;i++)
+     {
+            if(number%i==0 &&util.prime(i)==true)
+            {
+                 System.out.println(i+" ");
+                 number=number/i;
+                 
+            }
+            if(util.prime(number)==true)
+            {
+                System.out.print(number);
+                break;
+            }
+    }
+}
+  
+}
+
+

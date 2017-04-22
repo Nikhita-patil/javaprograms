@@ -1,0 +1,14 @@
+package com.bridgelabz.colletion_prgms;
+
+public class Price {
+    
+	String item;
+	int price;
+
+	public Price(String item, int price) {
+		super();
+		this.item = item;
+		this.price = price;
+	}
+	
+}

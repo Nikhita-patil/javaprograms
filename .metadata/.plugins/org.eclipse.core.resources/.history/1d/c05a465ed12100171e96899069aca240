@@ -1,0 +1,26 @@
+package dataStructure;
+
+public class BubbleSort {
+
+	public static String[] bubbleSortInt(String string[]) {
+		String temp_String = "";
+		for (int t = 0; t < .length - 1; t++) {
+			for (int i = 0; i < t1.length - t - 1; i++) {
+				if (t1[i + 1].compareTo(t1[i]) < 0) {
+					temp_String = t1[i];
+					t1[i] = t1[i + 1];
+					t1[i + 1] = temp_String;
+				}
+			}
+		}
+		return t1;
+	}
+
+	public static void main(String[] args) {
+		String string_array[] = { "Nikita", "Chaitra", "Miral", "Modi" };
+		string_array = bubbleSortInt(string_array);
+		for (String string_array1 : string_array)
+			System.out.println(string_array1);
+	}
+
+}

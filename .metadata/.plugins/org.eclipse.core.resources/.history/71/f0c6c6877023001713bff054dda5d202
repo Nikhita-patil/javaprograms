@@ -1,0 +1,7 @@
+package com.bridgelabz.colletion_prgms;
+
+public class BookArraylist{
+
+	String book_name;
+	
+}

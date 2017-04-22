@@ -1,0 +1,18 @@
+package com.bridgelabz.colletion_prgms;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashcodeOverriding {
+     
+	public static void main(String[] args) {
+		 
+		Set<Product> product=new HashSet<Product>();
+		product.add(new Product("bottle", 1234, 54.0));
+		product.add(new Product("botle", 1234, 54.0));
+		product.add(new Product("bootle", 1234, 54.0));
+		product.add(new Product("bootle", 1234, 54.0));
+		product.add(new Product("bootle", 1234, 54.0));
+	}
+	
+}

@@ -1,0 +1,14 @@
+package dataStructure;
+
+import com.bridgelabz.utility.Utility;
+
+public class BubbleSort {
+public static void main(String[] args) {
+		Utility utility=new Utility();
+		String string_array[] = { "Nikita", "Chaitra", "Miral", "Modi" };
+		string_array = utility.bubbleSortInt(string_array);
+		for (String string_array1 : string_array)
+			System.out.println(string_array1);
+	}
+
+}

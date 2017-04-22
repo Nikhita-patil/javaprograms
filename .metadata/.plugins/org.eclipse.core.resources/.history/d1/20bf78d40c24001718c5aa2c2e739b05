@@ -1,0 +1,7 @@
+package com.bridgelabz.colletion_prgms;
+import java.util.*;
+
+public class hashsetExample {
+    public static void main(String[] args) {
+        
+}

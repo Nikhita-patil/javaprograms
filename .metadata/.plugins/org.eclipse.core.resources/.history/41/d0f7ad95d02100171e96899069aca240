@@ -1,0 +1,25 @@
+package com.bridgelabz.programs;
+
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+public class SumofInt
+{
+    public static void main(String[] args)
+     {  
+    		Utility utility=new Utility();
+        int count=0;
+        System.out.println("enter the number was elements ");
+        Scanner scanner=new Scanner(System.in);
+         int number=scanner.nextInt();
+         int array[]=new int[number];
+          System.out.println("enter the array elements");
+          for(int i=0;i<array.length;i++)
+            {
+                a[i]=sc.nextInt();
+            }
+          util.sumInt(a,count);
+          
+     }
+}
+  

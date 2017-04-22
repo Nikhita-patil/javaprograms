@@ -1,0 +1,22 @@
+package com.bridgelabz.colletion_prgms;
+
+public class employeeQueueExample implements Comparable<String> {
+	int employee_id;
+	String employee_name;
+     double employee_salary;
+     String deptartment;
+	public employeeQueueExample(int employee_id, String employee_name, double employee_salary, String deptartment) {
+		super();
+		this.employee_id = employee_id;
+		this.employee_name = employee_name;
+		this.employee_salary = employee_salary;
+		this.deptartment = deptartment;
+	}
+
+	
+
+	public double compareTo( employeeQueueExample e) {
+		
+		return 0;
+	}
+}

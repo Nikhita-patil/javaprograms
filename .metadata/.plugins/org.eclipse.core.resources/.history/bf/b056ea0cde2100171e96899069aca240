@@ -1,0 +1,54 @@
+package dataStructure;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+
+public class UnorderedListmain {
+	public static void main(String[] args) {
+		Utility utility = new Utility();
+		UnorderedListmain unordered_List = new UnorderedListmain();
+		String string = utility.unordered_getFile();
+		String string1[] = string.split(" ");
+		System.out.println("enter the string");
+		Scanner scanner = new Scanner(System.in);
+		String input= scanner.next();
+
+		LinkedList<String> Linkedlist = new LinkedList<>();
+		for (int i = 0; i < string1.length; i++)
+			Linkedlist.add(string1[i]);
+
+		if (Linkedlist.contains(input)) {
+			Linkedlist.remove(Linkedlist.indexOf(input));
+			System.out.println("data already present in the file so is been removed");
+			String string11 = "";
+			for (String add : Linkedlist)
+				string11 = string11 + add + " ";
+			utility.unordered_addToFile(string11);
+			System.out.println("the contain of the file after removing the string");
+			System.out.println(string11);
+		} else {
+			Linkedlist.add(input);
+			String string2= "";
+			for (String str3 : ls)
+				s = s1 + str3 + " ";
+			String str4[] = s1.split(" ");
+			//str4 = BubbleSort.bubbleSortInt(str4);
+			s1 = "";
+			for(String s2 : str4)
+				s1 = s1 + s2 + " ";
+			util.unordered_addToFile(s1);
+			System.out.println("the string is not present in the file so is been added \n"
+					+ "contain of the file after adding the string");
+			System.out.print(s1);
+		}
+	}
+	
+
+}

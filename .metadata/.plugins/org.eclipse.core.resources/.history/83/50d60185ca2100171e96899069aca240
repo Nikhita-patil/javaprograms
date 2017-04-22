@@ -1,0 +1,32 @@
+package com.bridgelabz.programs;
+
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+
+public class Gambler {
+	public static void main(String[] args) {
+		Utility utility = new Utility();
+		System.out.println("enter the stake u have bet for");
+		Scanner scanner = new Scanner(System.in);
+		int stake = scanner.nextInt();
+
+		System.out.println("enter the goal u have set\n");
+		int goal = scanner.nextInt();
+
+		System.out.println("enter the number of trials\n");
+		int trials = sc.nextInt();
+		int loss = 0;
+		int win = 0;
+		int bets = 0;
+	
+			u1.stake(stake, goal, trials);
+			
+
+		}
+		//int avg = (win / trials) * 100;
+
+		//System.out.println("display the stack if we win" + avg);
+		//System.out.println("display the stack if we loss" + (100 - avg));
+	}
+

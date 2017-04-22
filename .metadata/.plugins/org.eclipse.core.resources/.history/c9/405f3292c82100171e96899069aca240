@@ -1,0 +1,23 @@
+package com.bridgelabz.programs;
+
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+
+class Balanced {
+	static Utility util = new Utility();
+
+	public static void main(String[] args) {
+		System.out.println("enter the string");
+		Scanner scanner=new Scanner(System.in );
+		String string_parantheses=scanner.next();
+		
+		boolean result = util.isBalanced(string_parantheses);
+		if (result)
+			System.out.println("the parantheses is  balanced");
+		else
+			System.out.println("the parantheses is not balanced");
+		util.isBalanced(string_parantheses);
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.bridgelabz.colletion_prgms;
+
+public class Product {
+
+	String product_name;
+	int id;
+	
+	
+}

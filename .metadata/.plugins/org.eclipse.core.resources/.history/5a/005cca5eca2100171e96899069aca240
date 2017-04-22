@@ -1,0 +1,23 @@
+package com.bridgelabz.programs;
+
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+
+import java.util.Random;
+public class Coupon
+{         
+       public static  int array[];
+        
+   public static void main(String[] args)
+     { 
+	   Utility utility=new Utility();
+        System.out.println("enter the random number\n");
+        Scanner scanner=new Scanner(System.in);
+         int number=scanner.nextInt();
+        arr=new int[number];
+        utility.get_randomnum(number,array);
+       
+     }
+
+}

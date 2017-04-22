@@ -1,0 +1,8 @@
+package com.bridgelabz.colletion_prgms;
+
+public class Price {
+    
+	String item;
+	int price;
+	
+}

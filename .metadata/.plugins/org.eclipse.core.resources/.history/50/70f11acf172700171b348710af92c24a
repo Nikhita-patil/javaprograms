@@ -1,0 +1,13 @@
+package org.bridgelabz.loginApp;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+
+public class InsertPractice {
+  public static void main(String args[])
+  {
+	  Connection con=null;
+	  PreparedStatement pstmt=null;
+	  string qry="insert into loginDb.student values(? "
+  }
+}

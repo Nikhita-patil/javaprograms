@@ -1,0 +1,23 @@
+package com.bridgelabz.colletion_prgms;
+import java.util.*;
+
+public class hashsetExample {
+    public static void main(String[] args) {
+    	Set<String> set = new HashSet<String>(10, (float) 0.8);
+    	 
+        set.add("One");
+        set.add("Two");
+   
+        // Duplication occurs.
+        // With HashSet: It will add new element, and remove the old element.
+        set.add("One");
+        set.add("Three");
+  
+        Iterator<String> it = set.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+  
+ }
+}

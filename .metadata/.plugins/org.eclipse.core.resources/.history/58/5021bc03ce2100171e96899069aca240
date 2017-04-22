@@ -1,0 +1,19 @@
+package com.bridgelabz.programs;
+
+import com.bridgelabz.utility.Utility;
+
+public class PowerTwo
+ {
+    public static void main(String[] args)
+     {
+    	Utility utility=new Utility();
+      int number=Integer.parseInt(args[0]);
+      
+       int power_two=2;
+       util.poweroftwo(number, power_two);
+     }
+}
+
+
+
+

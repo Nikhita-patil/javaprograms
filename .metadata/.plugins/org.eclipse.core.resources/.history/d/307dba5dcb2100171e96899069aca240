@@ -1,0 +1,20 @@
+package com.bridgelabz.programs;
+
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+public class Harmonic
+{
+   public static void main(String args[])
+    {
+	   Utility u1Utility=new Utility();
+      System.out.println("enter the harmonic series u want");
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      double sum =0.0;
+      u1.harmonicSeries(n,sum);
+      
+	
+}
+
+}

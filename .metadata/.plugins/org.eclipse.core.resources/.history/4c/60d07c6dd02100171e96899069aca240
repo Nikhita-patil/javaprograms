@@ -1,0 +1,20 @@
+package com.bridgelabz.programs;
+
+
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+public class StopWatch
+{
+   public static void main(String[] args)
+      {   
+		Utility utility=new Utility();
+        double startTime=0;
+        double stopTime=0;
+        double elapsedTime=0;
+ startTime=utility.timeStart(startTime);
+ stopTime=util.timeStop(stopTime);
+ util.timeElapse(stopTime, startTime, elapsedTime);
+}
+
+}

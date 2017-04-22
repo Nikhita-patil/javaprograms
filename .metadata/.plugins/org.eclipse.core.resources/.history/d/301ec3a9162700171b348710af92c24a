@@ -1,0 +1,6 @@
+package org.bridgelabz.loginApp;
+
+public class InsertPractice {
+  public static void main(String args[])
+  
+}

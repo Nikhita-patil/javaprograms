@@ -1,0 +1,21 @@
+package com.bridgelabz.programs;
+
+import java.util.Scanner;
+
+import com.bridgelabz.utility.Utility;
+public class LeapYear
+{
+  public static void main(String args[])
+{
+	  Utility utility=new Utility();
+   int year;
+    System.out.println("enter the year to be checked\n");
+    Scanner scannerc=new Scanner(System.in);
+    year=sc.nextInt();
+  u1.checkleap(year);
+
+}
+
+
+
+}
