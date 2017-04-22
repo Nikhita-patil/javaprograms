@@ -39,3 +39,4 @@ Thumbs.db
 .settings
 .classpath
 .project
+.gitignore
